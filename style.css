@@ -1,0 +1,125 @@
+
+body{
+    background-image: url("../RECIPEAPP/image/bg6.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.recipe-modal {
+    max-height: 80vh;
+    max-width: 80vw;
+    overflow-y: auto; 
+}
+
+.recipe-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.recipe-modal::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.recipe-modal::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.loader.hidden {
+    display: none;
+}
+
+.loader__text {
+    color: #030303;
+    animation: loading 1s infinite;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.search-bar-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-bar-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #000000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+  
+.search-bar-container:hover::before {
+    transform: scaleX(1);
+}
+  
+.search-bar-container input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+  
+.search-bar-container input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.search-bar-center {
+    justify-content: center;
+    height: 100vh;
+}
+
+.search-bar-top {
+    justify-content: flex-start;
+    height: auto;
+}
+
+#notification {
+    text-align: center;
+    margin-top: 1rem;
+    color: #fff;
+}
+.recipe-card {
+    background-color: rgba(17, 17, 17, 0.9); /* Card background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 20px 20px rgba(119, 119, 119, 0.826); /* Soft shadow */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.recipe-card img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
